@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <title>Giới thiệu</title>
+</head>
+<body>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-xl-12 col-lg-12 border" style="height: auto;">
+                <div id="nenheader">
+                    <div class="topnav">
+                        <a href="../html/login.html">Đăng nhập</a>
+                        <a href="../html/lienhe.html">Liên Hệ</a>
+                        <a href="../html/Cacdongxe.html">Các dòng xe</a>
+                        <a href="../html/Gioithieu.html">Giới thiệu</a>
+                        <img src="../img/2021-mercedes-star-in-ring-100th-anniversary-10.jpg" style="width: 120; height: 60px;float: left;">
+                        <a href="../html/logo.html" style="float: left; ">MERCEDER-BENZ</a>
+                        <form class="d-flex" style="width: 300px; padding-top: 10px ; padding: 10px;">
+                            <input class="form-control me-2" type="text" placeholder="Search">
+                            <button type="button" class="btn btn-default btn-sm" style="font-size: 1.2em;">
+                            <i class="fa fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- header -->
+        <div class="row signup_page">
+            <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 col-lg-6">
+                <img src="../img/mercedes-benz-viet-nam-star-truong-chinh-tp-hcm-gia-xe-mercedes-vn-7.jpg" class="img_sign">
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-xl-6 col-lg-6" style="height: auto;">
+                <h2 style="text-align: center; font-size: 30px; "><b>MERCEDER-BENZ AN DU  </b> </h2>
+                <p style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"> <b>Gia nhập thành viên của Mercedes-Benz An Du để nhận ưu đãi khi mua xe</b></p>
+                <div>
+                    <p class="member_sign">Đăng ký thành viên</p>
+                    <form action="" method="post" id="myform">
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Tên đăng nhập" id="Username" name="Username">
+                            <span class="error_sign error_user"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Password" id="Password" name="Password">
+                            <span class="error_sign error_pass"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" class="form-control" placeholder="Nhập lại password" id="Againpass" name="Againpass">
+                            <span class="error_sign error_apass"></span>
+                        </div>
+                        <p class="info_sign">Thông tin cá nhân</p>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Họ và tên" id="Name" name="Name">
+                            <span class="error_sign error_name"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Số điện thoại" id="Phone" name="Phone">
+                            <span class="error_sign error_phone"></span>
+                        </div>
+                        <div class="mb-3">
+                            <input class="form-control" placeholder="Email" id="Email" name="Email">
+                            <span class="error_sign error_email"></span>
+                        </div>
+                        <div class="signup_sign">
+                            <input type="button" value="Đăng kí" class="btn btn-danger" id="sub_form">
+                        </div>
+                    </form>
+                    <br>
+                    <br>
+                    <section class="table-responsive">
+                        <table class="table table-striped" id="myTable">
+                            <h5 style="text-align: center; color:crimson;font-size:20px;">Danh sách khách hàng đăng kí thành viên</h5>
+                            <br>
+                            <thead>
+                                <tr>
+                                    <th> STT</th>
+                                    <th> Tên đăng nhập</th>
+                                    <th> Họ và tên</th>
+                                    <th> SDT </th>
+                                    <th> Email</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="row" style="background-color: black; color: white;">
+            <div class="col col-4">
+                <br>
+                <br>
+                <img src="../img/2021-mercedes-star-in-ring-100th-anniversary-10.jpg" width="300px" height="180px">
+                <h6 style="font-size: 25px; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; padding-left: 55px;"><b>MERCEDER-BENZ</b></h6>
+            </div>
+            <div class="col col-8">
+                <br>
+                <h3 style="color:white ; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 30px; border-bottom: solid 1px white;"> <b>Các dòng xe bán chạy</b></h3>
+                <div class="row">
+                    <div class="col col-6">
+                        <div class="list-group">
+                            <ul class="list-group list-group-flush" style="padding: 20px; padding-bottom: 5px;">
+                                <li style="border-bottom: groove 1px rgb(90, 89, 89); padding:0px 70px; text-align: left;"> <a href="../html/C300_AMG.html" style="color: white; text-decoration: none; "> C300 AMG</a></li><br>
+                                <li style="border-bottom:groove 1px rgb(90, 89, 89) ; padding:0px 70px; text-align: left;"> <a href="../html/GLC200.html" style="color: white; text-decoration: none; "> GLC200</a></li> <br>
+
+                                <li style="border-bottom: groove 1px rgb(90, 89, 89); padding:0px 70px; text-align: left;"> <a href="../html/E300_AMG.html" style="color: white; text-decoration: none; "> E300 AMG</a></li> <br>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col col-6">
+
+                        <div class="list-group">
+                            <ul class="list-group list-group-flush" style="padding: 20px; padding-bottom: 5px;">
+                                <li style="border-bottom: groove 1px rgb(90, 89, 89); padding:0px 70px; text-align: left;"> <a href="../html/GLC300_Coupe.html" style="color: white; text-decoration: none;"> GLC300 Coupe</a></li><br>
+                                <li style="border-bottom: groove 1px rgb(90, 89, 89); padding:0px 70px; text-align: left;"> <a href="../html/S450_luxury.html" style="color: white; text-decoration: none; "> S450 Luxury</a></li> <br>
+                                <li style="border-bottom:groove 1px rgb(90, 89, 89); padding:0px 70px; text-align: left;"> <a href="../html/S450.html" style="color: white; text-decoration: none; "> S450</a></li> <br>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

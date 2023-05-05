@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=max-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="../css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../js/jquery-3.6.4.min.map">
+    <link rel="stylesheet" href="../js/bootstrap.min.js">
+    <title>Document</title>
+    <script>
+        $(document).ready(function(){
+            $("#btnModal").click(function(){
+                $("#myModal").modal();
+            })
+
+        function kiemTraMa(){
+            var maukt =/[0-9]{9}$/;
+            if(maukt.test($("#txtMa").val()) == true){
+                alert("Bạn nhập đúng");
+            }else{
+                alert("Bạn nhập sai");
+            }
+
+        }
+        $("#txtMa").blur(kiemTraMa);
+
+        function kiemTraHT(){
+            var kt = /(^[A-Z]{1})([a-z]+)(\s[A-Z]{1}([a-z]+))*$/;
+            if ($("#txtTen").val() ==""){
+                $("#tbTen").html("*Bắt buộc nhập!!");
+                $("#tbTen").addClass("mauDo");
+                return false;
+            }
+            if(!kt.test($("#txtTen").val())){
+                $("#tbTen").html("*Chữ cái đầu phải viết hoa !!");
+                $("#tbTen").addClass("mauDo");
+                return false
+            }
+            $("#tbTen").html("*");
+            return true;
+        };
+        $("#txtTen").blur(kiemTraHT);
+
+        function kiemTraDC() {
+            var mauKT1 = /^[a-z0-9-_]{3,15}$/;
+            var mauKT = /(abc)$/;
+            if ($("#txtDC").val()==""){
+                $("#tbDC").html("*Bắt buộc nhập!!");
+                $("#tbDC").addClass("mauDo");
+                return false; 
+            }
+            if(!mauKT.test($("#txtDC").val())){
+                $("#tbDC").html("*Chữ cái đầu phải viết hoa !!");
+                $("#tbDC").addClass("mauDo");
+                return false;
+            }
+            $("#tbDC").html("*");
+            return true;
+        }
+        $("#txtDC").blur(kiemTraDC);
+
+        //lấy giá trị của secion
+        $("#slGia"),change(function(){
+            $("#slGia option :selected").each(function(){
+                alert ($(this).val());
+                //gán giá trị cho textbox txtGiaDV
+                $("#txtGiaDV"),val($(this).val());
+            });
+
+        });
+        $(".chkDoDung").click(function() {
+           var tong =0;
+           var n = $(".chkDoDung:checked").length;
+           if (n>0){
+            $(".chkDoDung:checked").each(function(){
+                tong+= parseFloat($(this).val());
+                $("#txtKQ").val(tong);
+            });
+           } 
+        });
+        $("input[name='giam']").change(function(){
+            var tong =parseFloat($("#txtKQ").val())+ parseFloat($("#txtGiaDV").val())-parseFloat($("#this").val());
+            $("txtTong").val(tong);
+        });
+        $("#btnSave").click(function(){
+            alert("HI");
+            var ma =$("txtMa").val();
+            var ht =$("txtHT").val();
+            var ht =$("txtDC").val();
+            var ht =$("txtGiaDV").val();
+            var ht =$("txtKQ").val();
+            var ht =$("txtTong").val();
+            var them ="<tr><tr>"+(i++) +"</td><td>"+ma+"</td><td>"+ht+"</td><td>"+dc+"</td><td>"+"</td><td>"+
+                tvd+"</td><td>" +"<tr><td>"+tdd+"</td><td>"+"</td><td>"+tong+"</td><td>";
+            $("table tbody").append(them) ;
+            $("#myModal").modal("hide");
+            return true;  
+        });
+    });
+        
+    </script>
+    
+</head>
+<body>
+    <div class="container">
+        <input type="button" value="Hien" id="btnModal">
+           <table class=" table-bordered table-light table-primary table table-striped " id="tbDSV">
+               <thead >
+                <tr>
+                    <th> STT</th>
+                    <th> MA</th>
+                    <th> HO TEN</th>
+                    <th> DIA CHI</th>
+                    <th>TIEN DICH VU </th>
+                    <th> TIEN DO DUNG</th>
+                    <th> TIEN GIAM</th>
+                    <th> THANH TIEN</th>
+                </tr>
+               </thead>
+               <tbody>
+                <tr>
+                    <td>
+                1
+                    </td>
+                    <td>123456789</td>
+                    <td>Tran Anh</td>
+                    <td> Quang Ngai</td>
+                    <td>30000</td>
+                    <td>10000</td>
+                    <td>30000</td>
+                    <td>70000</td>
+                </tr>
+               </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="modal fade" id="myModal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h3>MODAL TITLE</h3>
+                            <button type="button" class="close" data-dismiss ="modal">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-control">
+                                <div class="row">
+                                    <div class="col-6 col-sm-3">
+                                        <label for="">Mã Khách hàng:</label>
+                                    </div>
+                                    <div class="col-6 col-sm-9">
+                                        <input type="text"class="form-control" placeholder="Nhập mã khách hàng" id="txtMa">
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                <div class="col-6 col-sm-3">
+                                    <label for="">Họ Tên:</label>
+                                </div>
+
+                            
+                                    <div class="col-6 col-sm-9">
+                                        <input type="text" id="txtTen" class="form-control" placeholder="Nhập Họ tên">
+
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-sm-12">
+                                            <span id="tbTen">*</span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-6 col-sm-3">
+                                        <label for="">Địa chỉ:</label>
+                                    </div>
+                                    <div class="col-6 col-xl-9">
+                                        <input type="text" class="form-control"placeholder=".col-4 .col-sm-8"id="txtDC">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6 col-xl-9">
+                                
+                                            </div>
+                                        <div class="col-8 col-xl-8">
+                                            <select name="gia" class="form-control" id="slGia">
+                                                <option value="2000" >Boi</option>
+                                                <option value="3000" > Game</option>
+                                                <option value="5000">Nuoc</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-4 col-xl-4">
+                                           <label for="">Giá</label> 
+
+                                        </div>
+                                        <div class="col-8 col-xl-4">
+                                            <input type="text" name="txtGiaDV" id ="txtGiaDV"class="form-control" disabled>     
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                    <div class="col-8 col-xl-4">
+                                        <label for="">Đồ dùng</label>
+                                    </div>
+                                    <div class="col-8 col-xl-8">
+                                        <input type="checkbox" name="chkDoDung" class="chkDoDung" value="2000"/>Áo quần bơi
+                                    </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 col-xl-4">
+                                            <label for=""></label>
+                                        </div>
+                                        <div class="col-8 col-xl-8">
+                                            <input type="checkbox" name="chkDoDung" class="chkDoDung" value="5000"/>Phao
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-4 col-xl-4">
+                                            <label for=""></label>
+                                        </div>
+                                        <div class="col-8 col-xl-8">
+                                            <input type="checkbox" name="chkDoDung" class="chkDoDung" value="7000"/>Kinh boi
+                                        </div>
+                                    </div>
+                                    <br>
+                                    <div class="row">
+                                        <div class="col-4 col-xl-4">
+                                            <label for="">Thành tiền:</label>
+
+                                    </div>
+                                    <div class="col-8 col-xl-8">
+                                        <input type="text" name="txtKQ" id="txtKQ" class="form-control" value="0" disabled>
+                                    </div>
+                                    </div>
+                                <br>
+                                    <div class="row">
+                                        <div class="col-4 col-xl-4">
+                                            <label for="">Giảm trừ</label>
+                                        </div>
+                                        <div class="col-8 col-xl-8">
+                                            <input type="radio" name="giam" value="7000">Ngày thường
+                                            <input type="radio" name="giam" value="1000">Cuối tuần
+                                        </div>
+                                    </div>
+                                <br>
+                                    <div class="row">
+                                        <div class="col-4 col-xl-4">
+                                            <label for="">Tổng tiền</label>
+                                        </div>
+                                        <div class="col-8 col-xl-8">
+                                            <input type="text" name="txtTong" id="txtTong" class="form-control" disabled>
+                                        </div>
+
+                                    </div>  
+                                <br>
+                                    <div class="row">
+                                        <div class="col-5 col-xl-5">
+                                        </div>
+                                        <div class="col-5 col-xl-5">
+                                            <input type="button" value="Submit" id="btnSave" class="btn btn-success btn-block">&nbsp;
+                                            <input type="reset" value="reset">
+                                        </div>
+                                        <div class="col-2 col-xl-2">
+
+                                        </div>
+                                    </div>  
+                                    <br>      
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
